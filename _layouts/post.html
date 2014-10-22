@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign post = page %}
+
 <!-- Post Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
     <div class="container">
@@ -11,7 +13,7 @@ layout: default
                     <h1>{{ page.title }}</h1>
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% endif %}
+                    {% endif %}                    
                     <span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
                 </div>
             </div>
@@ -24,6 +26,8 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
 
 				{{ content }}
 
@@ -41,6 +45,46 @@ layout: default
                     </li>
                     {% endif %} 
                 </ul>
+
+
+                {% if post.category %}
+                    {% for site_category in site.data.categories %}
+                        {% if site_category.slug == post.category %}
+                            {% assign category = site_category %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if category %}
+                        {% capture category_content %} in <span class="label" style="background-color:{{ category.color }}"><a href="/categorys/{{ category.slug }}/">{{ category.name }}</a></span>{% endcapture %}
+                    {% endif %}
+                {% else %}
+                    {% assign category_content = '' %}
+                {% endif %}
+
+                {% if post.tags.size > 0 %}
+                    {% capture tags_content %} with {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+                    {% for post_tag in post.tags %}
+                        {% for data_tag in site.data.tags %}
+                            {% if data_tag.slug == post_tag %}
+                                {% assign tag = data_tag %}
+                            {% else %}
+                                {% assign tag = '' %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if tag != '' %}
+                            {% capture tags_content_temp %}{{ tags_content }}<a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+                            {% assign tags_content = tags_content_temp %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% assign tags_content = '' %}
+                {% endif %}
+
+                {% if category_content != '' %}
+                    <p id="post-meta">Posted {{ category_content }}{{ tags_content }}</p>
+                {% endif %}
+
+
+                {% include comments.html %}
 
             </div>
         </div>

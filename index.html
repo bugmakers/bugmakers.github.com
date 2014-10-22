@@ -4,23 +4,49 @@ description: "A Clean Blog Theme by Start Bootstrap"
 header-img: "img/home-bg.jpg"
 ---
 
-
-{% for category in site.categories %}
-  <!-- <li> -->
-    <a name="{{ category | first }}"> Category : {{ category | first }}</a>
-    <ul>
-    {% for posts in category %}
-      {% for post in posts %}
-        {% if post.url %} 
-            <li><a href="{{ post.url }}"> Post :  {{ post.title }}, {{ post.date }}</a></li>
+{% for post in site.posts limit: 4 %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-      {% endfor %}
-    {% endfor %}
-    </ul>
-  <!-- </li> -->
+
+        {% if post.comments != false %}
+        <h3 class="comment-count"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a></h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
 {% endfor %}
 
 
+<!-- Pager -->
+<ul class="pager">
+    <li class="next">
+        <a href="/blog">More &rarr;</a>
+    </li>
+</ul>
+
+<script>
+  var disqus_shortname = "bugmakers";
+
+  (function () {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "//" + disqus_shortname + ".disqus.com/count.js";
+
+    document.getElementsByTagName("head")[0].appendChild(s);
+  }());
+</script>
+
+
+<!--
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
@@ -37,8 +63,10 @@ header-img: "img/home-bg.jpg"
 </div>
 <hr>
 {% endfor %}
+-->
 
 <!-- Pager -->
+<!--
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
@@ -53,3 +81,5 @@ header-img: "img/home-bg.jpg"
     {% endif %}
 </ul>
 {% endif %}
+-->
+
