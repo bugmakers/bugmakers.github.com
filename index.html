@@ -16,11 +16,11 @@ header-img: "img/home-bg.jpg"
         </h3>
         {% endif %}
 
-        {% if post.comments != false %}
-        <h3 class="comment-count"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a></h3>
-        {% endif %}
+        
     </a>
-    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }} 
+    {% if post.comments != false %} <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a>{% endif %}
+    </p>
 </div>
 <hr>
 {% endfor %}
