@@ -10,13 +10,7 @@ tags: [github, github-pages, jekyll, 안드로이드]
 comments: True
 ---
 
-첫번째 포스트지만 내요은 없습니다. ^^;
+첫번째 포스트지만 내용은 없습니다. ^^;
 
-
-![My helpful screenshot]({{ site.url }}/img/bird.jpg)
-
-![Alt bird]({{ site.url }}/img/bird.jpg)
-
-![Alt bird]({{ site.url }}/img/rabit.jpg)
 
 <img src="{{ site.url }}/img/rabit.jpg" class="img-responsive" alt="bird">
