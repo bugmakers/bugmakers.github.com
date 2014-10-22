@@ -7,6 +7,7 @@ author:     "Start Bootstrap"
 header-img: "img/post-bg-06.jpg"
 category: programming
 tags: [github, github-pages, jekyll, 안드로이드]
+comments: True
 ---
 
 ```python
