@@ -3,7 +3,13 @@ layout: default
 ---
 
 <!-- Page Header -->
+{% if page.header-img %}
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
+{% elsif page.header-color %}
+<header class="intro-header" style="background-color:{{ page.header-color }}">
+{% else %}
+<header class="intro-header" style="background-color:#1abc9c">
+{% endif %}
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
