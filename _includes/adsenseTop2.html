@@ -1,14 +1,66 @@
 <!-- Adsense Top 2 -->
-
 {% if site.adsense %}
+<style>
+ @media screen and (max-width:480px) {
+   #ads_content_1 {
+     float: none;
+     width: auto;
+   }
+   #ads_content_2 {
+     float: none;
+     width: auto;
+   }
+ }
+</style>
+    
+<div id="ads_content_1">
+     <style>
+     /*
+     .bugmaker-1 { width: 320px; height: 50px; }
+     @media(min-width: 500px) { .bugmaker-1 { width: 468px; height: 60px; } }
+     @media(min-width: 800px) { .bugmaker-1 { width: 728px; height: 90px; } }
+     
+     .bugmaker-1 { width: 336px; height: 280px; }
+     @media(min-width: 320px) { .bugmaker-1 { width: 200px; height: 200px; } }
+     @media(min-width: 600px) { .bugmaker-1 { width: 300px; height: 250px; } }
+     @media(min-width: 768px) { .bugmaker-1 { width: 336px; height: 280px; } }
+     @media(min-width: 1200px) { .bugmaker-1 { width: 336px; height: 280px; } }
+     */
+     
+     .bugmaker-1 { width: 336px; height: 280px; }
+     @media(min-width: 320px) { .bugmaker-1 { width: 320px; height: 50px; } }
+     @media(min-width: 600px) { .bugmaker-1 { width: 300px; height: 250px; } }
+     @media(min-width: 768px) { .bugmaker-1 { width: 336px; height: 280px; } }
+     @media(min-width: 1200px) { .bugmaker-1 { width: 336px; height: 280px; } }
+     </style>
      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
      <!-- Bugmaker 반응형 1 -->
-     <ins class="adsbygoogle"
-          style="display:block"
+     <ins class="adsbygoogle bugmaker-1"
+          style="display:inline-block"
           data-ad-client="ca-pub-2962708026533144"
-          data-ad-slot="4870656279"
-          data-ad-format="auto"></ins>
+          data-ad-slot="4870656279"></ins>
      <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+</div>
+<div id="ads_content_2">
+     <style>
+     .bugmaker-2 { width: 336px; height: 280px; }
+     @media(min-width: 320px) { .bugmaker-2 { width: 320px; height: 50px; } }
+     @media(min-width: 600px) { .bugmaker-2 { width: 300px; height: 250px; } }
+     @media(min-width: 768px) { .bugmaker-2 { width: 336px; height: 280px; } }
+     @media(min-width: 1200px) { .bugmaker-2 { width: 336px; height: 280px; } }
+     </style>
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <!-- Bugmaker 반응형 2 -->
+     <ins class="adsbygoogle bugmaker-2"
+          style="display:inline-block"
+          data-ad-client="ca-pub-2962708026533144"
+          data-ad-slot="6347389474"></ins>
+     <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+</div>
+
+     
 {% endif %}
