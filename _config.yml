@@ -19,7 +19,7 @@ paginate_path: "/blog/page:num"
 exclude: ["node_modules"]
 
 adsense: Yes
-
+my_search_engine_id_google: partner-pub-2962708026533144:9403430672
 
 #gems:
 #- jekyll-mentions
