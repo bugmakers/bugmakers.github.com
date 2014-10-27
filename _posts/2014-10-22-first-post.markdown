@@ -5,8 +5,8 @@ subtitle:   "첫번째 테스트 포스트를 올려 봅니다. 많은 내용을
 date:       2014-10-22 17:15:00
 author:     "Bugmakers"
 #header-img: "img/post-bg-06.jpg"
-category: programming
-tags: [github, github-pages, jekyll, 안드로이드]
+category: android
+tags: [android, 안드로이드]
 comments: True
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: tag
-tag: github-pages
-permalink: /tags/github-pages/
+tag: blog
+permalink: /tags/blog/
 header-img: "img/post-bg-01.jpg"
 ---

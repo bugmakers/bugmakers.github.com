@@ -1,2 +1,15 @@
-- slug: github-pages
-  name: GitHub Pages
+- slug: 안드로이드
+  name: 안드로이드
+  id: android
+
+- slug: 블로그
+  name: 블로그
+  id: blog
+
+- slug: android
+  name: Android
+  id: android
+
+- slug: blog
+  name: Blog
+  id: blog
