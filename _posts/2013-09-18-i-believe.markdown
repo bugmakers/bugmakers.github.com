@@ -1,8 +1,9 @@
 ---
 layout:     post
 title:      "I believe every human has a finite number of heartbeats. I don't intend to waste any of mine."
-date:       2014-09-18 12:00:00
+date:       2013-09-18 12:00:00
 author:     "Start Bootstrap"
+category: android
 header-img: "img/post-bg-05.jpg"
 comments: False
 ---

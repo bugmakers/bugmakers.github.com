@@ -2,7 +2,7 @@
 layout:     post
 title:      "두번째 포스트"
 subtitle:   "두번째 테스트 포스트를 올려 봤음."
-date:       2014-10-27 16:24:00
+#date:       2014-10-27 16:24:00
 author:     "Bugmakers"
 #header-img: "img/post-bg-06.jpg"
 category: android

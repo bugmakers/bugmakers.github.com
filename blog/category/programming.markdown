@@ -1,6 +1,6 @@
 ---
 layout: category
 category: programming
-permalink: categorys/programming/
+permalink: categories/programming/
 header-img: "img/post-bg-01.jpg"
 ---
