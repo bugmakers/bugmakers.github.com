@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Articles
 header-img: "img/post-bg-01.jpg"
 ---
