@@ -12,16 +12,15 @@ comments: True
 
 # toc를 동적으로 만들자ㅁ
 
-동적으로 toc를 만들수 있습니다. 
 
 ## 어떨게?
 
-어떻게 만드냐고 물어봤자
+어떻게 만드냐고 물어봤자동적으로 toc를 만들수 있습니다. 
+
 잘모를 수도 있잖아요. 
 
 ## 무엇을
 
-목차를!! 
-
+{% gist f3e4d0c86a712b138830 %}
 
 <img src="{{ site.url }}/img/rabit.jpg" class="img-responsive" alt="bird">
