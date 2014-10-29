@@ -38,7 +38,11 @@ layout: default
                
 
                 <div id="main_content">
-				    {{ content }}
+                    {% if page.toc == true %}
+                    {% include toc_content.html %}
+                    {% else %}
+                    {{ content }}
+                    {% endif %}
                 </div>
 
                 <hr>

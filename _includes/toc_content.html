@@ -1,0 +1,69 @@
+{% assign convert_content = '' %}
+{% assign toc_content = '' %}
+{% capture toc %}
+<ul>
+{% assign toc_content = toc_content | append:'<ul>' %}
+	{% assign tocAnchor = 'tocAnchor' %}
+	{% assign tag_h1_open = content|split:'<h1>' %}
+	{% for h1 in tag_h1_open %}
+		{% assign subTocAnchor = tocAnchor | append:'-' | append:forloop.index %}
+		{% if forloop.index != 1 %}
+			{% assign tag_h1_close = h1|split:'</h1>' %}
+			<li><a  href='#{{subTocAnchor}}'>{{ tag_h1_close[0] }}</a></li>
+	{% capture li_tag %}
+	<li><a  href='#{{subTocAnchor}}'>{{ tag_h1_close[0] }}</a></li>{% endcapture %}
+	{% assign toc_content = toc_content | append:li_tag %}
+			{% for h1_close in tag_h1_close %}
+				{% if forloop.index == 1 %}
+					{% capture h1_tag %}
+					{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h1 id="' | append:subTocAnchor | append:'">'  %}{% endif %}
+					{% assign convert_content = convert_content | append:h1_close %}
+					{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'</h1>' %}{% endif %}
+					{% endcapture %}
+					{% assign title = h1_tag | split:' ' %}
+					{{ title }}
+				{% else %}
+					<ul>
+	{% capture ul_tag %}
+	<ul>{% endcapture %}
+	{% assign toc_content = toc_content | append:ul_tag %}
+					{% assign tag_h2_open = h1_close|split:'<h2>' %}
+					{% for h2 in tag_h2_open %}
+						{% assign subTocAnchor2 = subTocAnchor | append:'-' | append:forloop.index %}
+						{% if forloop.index != 1 %}
+							{% assign tag_h2_close = h2|split:'</h2>' %}
+							<li><a  href='#{{subTocAnchor2}}'>{{ tag_h2_close[0] }}</a></li>
+		{% capture li_tag %}
+		<li><a  href='#{{subTocAnchor2}}'>{{ tag_h2_close[0] }}</a></li>{% endcapture %}
+		{% assign toc_content = toc_content | append:li_tag %}
+							{% for h2_close in tag_h2_close %}
+								{% capture h2_tag %}
+								
+									{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h2 id="' | append:subTocAnchor2 | append:'">'  %}{% endif %}
+									{% assign convert_content = convert_content | append:h2_close %}
+									{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'</h2>' %}{% endif %}
+								
+								{% endcapture %}
+								{% assign title = h2_tag | split:' ' %}
+								{{ title }}
+							{% endfor %}
+						{% else %}
+							{% assign convert_content = convert_content | append:h2 %}
+						{% endif %}
+					{% endfor %}
+					</ul>
+	{% capture ul_tag %}
+	</ul>{% endcapture %}
+	{% assign toc_content = toc_content | append:ul_tag %}
+				{% endif %}				
+			{% endfor %}
+		{% else %}
+			{% assign convert_content = convert_content | append:h1 %}
+		{% endif %}
+	{% endfor %}
+{% capture ul_tag %}
+</ul>{% endcapture %}
+{% assign toc_content = toc_content | append:ul_tag %}
+{% endcapture %}
+{{ toc_content }}
+{{ convert_content }}
