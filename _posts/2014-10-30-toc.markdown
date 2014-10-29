@@ -19,9 +19,15 @@ comments: True
 
 원본 : 10 Rules of Good and Bad Studying
 
+{% gist f3e4d0c86a712b138830 %}
+
+
 ## 떠올려라
 
 한 장을 읽은 후에 보지 않으면서 주요 아이디어를 떠올려라. 하일라이트는 거의 하지 말고 먼저 떠올려서 기억하기 전에는 절대 아무것도 하일라이트하지 말아라. 수업하러 걸어갈 때나 원래 배운 곳과는 다른 공간에서 주요 아이디어를 떠올려라. 떠올리는 능력은 좋은 공부의 주요 척도이다.
+
+
+<img src="{{ site.url }}/img/rabit.jpg" class="img-responsive" alt="bird">
 
 ## 자신을 테스트하라
 
@@ -103,6 +109,3 @@ Chunking(덩이짓기)는 순식간에 모든 것이 생각날 수 있도록 문
 
 이제 자야겠다..
 
-{% gist f3e4d0c86a712b138830 %}
-
-<img src="{{ site.url }}/img/rabit.jpg" class="img-responsive" alt="bird">

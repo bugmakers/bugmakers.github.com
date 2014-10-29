@@ -415,6 +415,20 @@ a[rel="footnote"] {
     line-height: 0;
 }
 
+
+
+/* Add by Bugmakers*/
 h2, .h2 {
 font-size: 24px;
+}
+
+
+.dropdown-header {
+display: block;
+padding: 3px 20px;
+font-size: 16px;
+line-height: 1.42857143;
+color: #777;
+white-space: nowrap;
+/*border-bottom:1px solid #404040;*/
 }

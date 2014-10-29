@@ -1,6 +1,6 @@
 # Site settings
-title: Clean N Clean
-email: your-email@yourdomain.com
+title: Bugmakers Blog
+email: blog.bugmakers@gmail.com
 description: "Write your site description here. It will be used as your sites meta description as well!"
 #baseurl: "/"
 url: "http://bugmakers.github.io"
