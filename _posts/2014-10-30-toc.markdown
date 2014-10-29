@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "TOC 포스트"
+title:      "TOC 테스트 장문의 글.."
 subtitle:   "TOC 테스트 포스트를 올려 봅니다. 많은 내용을 담고 싶습니다."
-date:       2014-10-28 17:15:00
+date:       2014-10-30 02:00:00
 author:     "Bugmakers"
 #header-img: "img/post-bg-06.jpg"
 category: android

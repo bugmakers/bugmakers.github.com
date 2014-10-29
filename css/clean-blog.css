@@ -75,6 +75,15 @@ hr.small {
     color: white;
     padding: 20px;
   }
+  .navbar-custom .nav .dropdown-menu li a {
+    color: #404040;
+    padding: 20px;
+  }
+  .navbar-custom .nav .dropdown-menu li a:hover,
+  .navbar-custom .nav .dropdown-menu li a:focus {
+    color: #0085a1;
+    padding: 20px;
+  }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
     color: rgba(255, 255, 255, 0.8);
@@ -147,7 +156,7 @@ hr.small {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 80px 0;  /*150 -> 80 */
   }
 }
 .intro-header .site-heading,
@@ -329,6 +338,10 @@ form .row:first-child .floating-label-form-group {
   border-radius: 0;
   padding: 15px 25px;
 }
+.btn-sm {
+  font-size: 12px;
+  padding: 10px 20px;
+}
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
@@ -400,4 +413,8 @@ a[rel="footnote"] {
     border-bottom: none;
     background-color: #fff9c7;
     line-height: 0;
+}
+
+h2, .h2 {
+font-size: 24px;
 }
