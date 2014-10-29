@@ -6,17 +6,17 @@
 	{% assign tocAnchor = 'tocAnchor' %}
 	{% assign tag_h1_open = content|split:'<h1>' %}
 	{% for h1 in tag_h1_open %}
-		{% assign subTocAnchor = tocAnchor | append:'-' | append:forloop.index %}
 		{% if forloop.index != 1 %}
+			{% assign h1_index = forloop.index | minus:1 %}
 			{% assign tag_h1_close = h1|split:'</h1>' %}
-			<li><a  href='#{{subTocAnchor}}'>{{ tag_h1_close[0] }}</a></li>
+			<li><a  href='#{{tocAnchor}}-{{h1_index}}'>{{ tag_h1_close[0] }}</a></li>
 	{% capture li_tag %}
-	<li><a  href='#{{subTocAnchor}}'>{{ tag_h1_close[0] }}</a></li>{% endcapture %}
+	<li><a  href='#{{tocAnchor}}-{{h1_index}}'>{{h1_index}} {{ tag_h1_close[0] }}</a></li>{% endcapture %}
 	{% assign toc_content = toc_content | append:li_tag %}
 			{% for h1_close in tag_h1_close %}
 				{% if forloop.index == 1 %}
 					{% capture h1_tag %}
-					{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h1 id="' | append:subTocAnchor | append:'">'  %}{% endif %}
+					{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h1 id="' | append:tocAnchor | append:'-' | append:h1_index | append:'">'  %}{% endif %}
 					{% assign convert_content = convert_content | append:h1_close %}
 					{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'</h1>' %}{% endif %}
 					{% endcapture %}
@@ -29,17 +29,17 @@
 	{% assign toc_content = toc_content | append:ul_tag %}
 					{% assign tag_h2_open = h1_close|split:'<h2>' %}
 					{% for h2 in tag_h2_open %}
-						{% assign subTocAnchor2 = subTocAnchor | append:'-' | append:forloop.index %}
 						{% if forloop.index != 1 %}
+							{% assign h2_index = forloop.index | minus:1 %}
 							{% assign tag_h2_close = h2|split:'</h2>' %}
-							<li><a  href='#{{subTocAnchor2}}'>{{ tag_h2_close[0] }}</a></li>
+							<li><a  href='#{{tocAnchor}}-{{h1_index}}-{{h2_index}}'>{{ tag_h2_close[0] }}</a></li>
 		{% capture li_tag %}
-		<li><a  href='#{{subTocAnchor2}}'>{{ tag_h2_close[0] }}</a></li>{% endcapture %}
+		<li><a  href='#{{tocAnchor}}-{{h1_index}}-{{h2_index}}'>{{h1_index}}-{{h2_index}} {{ tag_h2_close[0] }}</a></li>{% endcapture %}
 		{% assign toc_content = toc_content | append:li_tag %}
 							{% for h2_close in tag_h2_close %}
 								{% capture h2_tag %}
 								
-									{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h2 id="' | append:subTocAnchor2 | append:'">'  %}{% endif %}
+									{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'<h2 id="' | append:tocAnchor | append:'-' | append:h1_index| append:'-' | append:h2_index | append:'">'  %}{% endif %}
 									{% assign convert_content = convert_content | append:h2_close %}
 									{% if forloop.index == 1 %}{% assign convert_content = convert_content | append:'</h2>' %}{% endif %}
 								

@@ -38,10 +38,10 @@ layout: default
                
 
                 <div id="main_content">
-                    {% if page.toc == true %}
-                    {% include toc_content.html %}
+                    {% if post.toc == false %}
+                        {{ content }}
                     {% else %}
-                    {{ content }}
+                        {% include toc_content.html %}
                     {% endif %}
                 </div>
 
