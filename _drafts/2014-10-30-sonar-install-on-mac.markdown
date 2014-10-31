@@ -1,5 +1,5 @@
 ---
-layout:     post
+layout:     draft
 title:      "Sonar를 맥에서 설정"
 subtitle:   "Sonar를 맥에 설치하고, 안드로이드 소스를 분석하는 방법에 대해 정리해본다."
 
@@ -18,7 +18,7 @@ author:     "Bugmakers"
 # 새로운 카테고리 추가 방법
 # 1. _data/categories.yml에 카테고리 추가 
 # 2. blog/category/ 아래에 카테고리 markdown 추가
-#category: android
+category: draft
 
 # 테그
 # 새로운 테그 추가 방법
@@ -34,7 +34,4 @@ comments: True
 #toc: false
 ---
 
-프로젝트를 진행하면서 Sonar의 분석에 대한 처리에 대해서 요구사항이 들어왔다.
-Sonar에 대해서 얼핏 본적은 있지만, 사용해 보지는 않았던 터라, 
-
-# Sonar에 대한 설명
+{% gist 68ec3a7106c35fc504d5 %}
