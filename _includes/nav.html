@@ -20,7 +20,8 @@
                   <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Posts<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     
-                    {% assign tags_list = site.categories %}  
+                    {% assign tags_list = site.categories %} 
+
                       {% if tags_list.first[0] == null %}
                         {% for tag in tags_list %} 
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ site.url }}/categories/#{{ tag }}">{{ tag | capitalize }} <sup>{{ site.tags[tag].size }}</sup></a></li>
